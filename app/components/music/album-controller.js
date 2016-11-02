@@ -8,6 +8,10 @@
     AlbumController.$inject = ['$stateParams', 'MusicService']
 
     function AlbumController($stateParams, MusicService) {
+
+        var id = $stateParams.id;
+        this.album = MusicService.getAlbumById(id);
+        console.log(this.album);
         // you will need to utilize the $stateParams and MusicService to get the correct album by its id
         //Be sure to get the desired album on some property that you can use in the view
 

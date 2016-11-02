@@ -4,10 +4,17 @@ angular.module('ng-music')
 
         ms.getAllAlbums = function () {
             // Go Ahead and return the albums
+            return albums;
         }
 
         ms.getAlbumById = function (id) {
             //You should return the album by its id
+            for(var i = 0; i < albums.length; i++){
+                if(albums[i].collectionId == id){
+                    return albums[i];
+                }
+            }
+            return new Error("Album not found!");
         }
 
         // Once you finish these two functions head over to app-routes and make sure your albums state is rendering the <albums> component
